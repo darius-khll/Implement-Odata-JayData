@@ -11,7 +11,6 @@ namespace OData.Migrations
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
-            ContextKey = "OData.Models.ProductsContext";
         }
 
         protected override void Seed(OData.Models.ProductsContext context)
