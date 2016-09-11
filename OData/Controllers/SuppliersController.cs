@@ -4,16 +4,15 @@ using System.Web.OData;
 
 namespace OData.Controllers
 {
-
-    public class ProductsController : ODataController
+    public class SuppliersController : ODataController
     {
         ProductsContext db = new ProductsContext();
 
         [EnableQuery]
-        public IQueryable<Product> Get()
+        public IQueryable<Supplier> Get()
         {
-            return db.Products;
+            return db.Suppliers;
         }
-        
+
     }
 }
