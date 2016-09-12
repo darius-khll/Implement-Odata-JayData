@@ -14,5 +14,11 @@ namespace OData.Controllers
             return db.Categories;
         }
 
+        [EnableQuery]
+        public Category Get([FromODataUri] int Key)
+        {
+            return db.Categories.Single(c => c.Id == Key);
+        }
+
     }
 }

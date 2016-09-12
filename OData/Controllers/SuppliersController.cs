@@ -14,5 +14,11 @@ namespace OData.Controllers
             return db.Suppliers;
         }
 
+        [EnableQuery]
+        public Supplier Get([FromODataUri] int Key)
+        {
+            return db.Suppliers.Single(c => c.Id == Key);
+        }
+
     }
 }
