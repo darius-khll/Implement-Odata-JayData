@@ -14,6 +14,12 @@ namespace OData.Controllers
         {
             return db.Products;
         }
+
+        [EnableQuery]
+        public Product Get([FromODataUri] int Key)
+        {
+            return db.Products.Single(c => c.Id == Key);
+        }
         
     }
 }
