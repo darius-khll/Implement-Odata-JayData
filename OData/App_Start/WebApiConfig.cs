@@ -13,7 +13,9 @@ namespace OData
 
             builder.EntitySet<Product>("Products");
             builder.EntitySet<Category>("Categories");
-            builder.EntitySet<Supplier>("Suppliers");
+            var supplier = builder.EntitySet<Supplier>("Suppliers");
+
+            supplier.EntityType.Ignore(c => c.Name);
 
             config.MapODataServiceRoute(
                 routeName: "ODataRoute",
