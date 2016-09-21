@@ -8,12 +8,10 @@ namespace OData.Controllers
     {
         ProductsContext db = new ProductsContext();
 
-        //[EnableQuery(AllowedQueryOptions = System.Web.OData.Query.AllowedQueryOptions.Filter
-        //    | System.Web.OData.Query.AllowedQueryOptions.OrderBy
-        //    , AllowedOrderByProperties = "Name",
-        //    PageSize = 2
-            
-        //    )]
+        [EnableQuery(AllowedQueryOptions = System.Web.OData.Query.AllowedQueryOptions.Filter | System.Web.OData.Query.AllowedQueryOptions.OrderBy,
+            AllowedOrderByProperties = "Name",
+            PageSize = 2
+            )]
         [EnableQuery(PageSize = 2)]
         public IQueryable<Category> Get()
         {
