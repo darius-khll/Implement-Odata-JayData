@@ -12,7 +12,6 @@ namespace OData.Controllers
             AllowedOrderByProperties = "Name",
             PageSize = 2
             )]
-        [EnableQuery(PageSize = 2)]
         public IQueryable<Category> Get()
         {
             return db.Categories;

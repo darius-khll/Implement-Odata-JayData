@@ -1,7 +1,10 @@
-﻿using OData.Models;
+﻿using Microsoft.OData;
+using OData.Models;
+using System.Collections.Generic;
 using System.Web.Http;
 using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
+using System.Web.OData.Routing.Conventions;
 
 namespace OData
 {
@@ -9,19 +12,24 @@ namespace OData
     {
         public static void Register(HttpConfiguration config)
         {
-            ODataModelBuilder builder = new ODataConventionModelBuilder();
+            ODataModelBuilder odataModelBuilder = new ODataConventionModelBuilder();
 
-            builder.EntitySet<Product>("Products");
-            builder.EntitySet<Category>("Categories");
-            var supplier = builder.EntitySet<Supplier>("Suppliers");
+            odataModelBuilder.EntitySet<Product>("Products");
+            odataModelBuilder.EntitySet<Category>("Categories");
+            var supplier = odataModelBuilder.EntitySet<Supplier>("Suppliers");
+
+            var edmModel = odataModelBuilder.GetEdmModel();
 
             supplier.EntityType.Ignore(c => c.Name);
 
-            config.MapODataServiceRoute(
-                routeName: "ODataRoute",
-                routePrefix: "odata",
-                model: builder.GetEdmModel()
-                );
+            config.Select(System.Web.OData.Query.QueryOptionSetting.Allowed);
+
+            config.MapODataServiceRoute("ODataRoute", "odata",
+                builder =>
+                {
+                    builder.AddService(ServiceLifetime.Singleton, sp => edmModel);
+                    builder.AddService<IEnumerable<IODataRoutingConvention>>(ServiceLifetime.Singleton, sp => ODataRoutingConventions.CreateDefault());
+                });
         }
     }
 }
