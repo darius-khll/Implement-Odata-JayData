@@ -23,6 +23,11 @@ namespace OData
             supplier.EntityType.Ignore(c => c.Name);
 
             config.Select(System.Web.OData.Query.QueryOptionSetting.Allowed);
+            config.MaxTop(25);
+            config.OrderBy(System.Web.OData.Query.QueryOptionSetting.Allowed);
+            config.Count(System.Web.OData.Query.QueryOptionSetting.Allowed);
+            config.Expand(System.Web.OData.Query.QueryOptionSetting.Allowed);
+            config.Filter(System.Web.OData.Query.QueryOptionSetting.Allowed);
 
             config.MapODataServiceRoute("ODataRoute", "odata",
                 builder =>
