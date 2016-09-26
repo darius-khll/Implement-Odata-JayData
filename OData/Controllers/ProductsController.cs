@@ -9,8 +9,8 @@ namespace OData.Controllers
     public class ProductsController : ODataController
     {
         ProductsContext db = new ProductsContext();
-        [EnableQuery(AllowedOrderByProperties = "Id,Name")]
-        //[EnableQuery]
+        //[EnableQuery(AllowedOrderByProperties = "Id,Name")]
+        [EnableQuery]
         public IQueryable<Product> Get()
         {
             return new List<Product>
