@@ -14,8 +14,8 @@ namespace OData
         {
             ODataModelBuilder odataModelBuilder = new ODataConventionModelBuilder();
 
-            odataModelBuilder.EntitySet<Product>("Products");
-            odataModelBuilder.EntitySet<Category>("Categories");
+            var product = odataModelBuilder.EntitySet<Product>("Products");
+            var category = odataModelBuilder.EntitySet<Category>("Categories");
             var supplier = odataModelBuilder.EntitySet<Supplier>("Suppliers");
 
             var edmModel = odataModelBuilder.GetEdmModel();
@@ -28,6 +28,8 @@ namespace OData
             config.Count(System.Web.OData.Query.QueryOptionSetting.Allowed);
             config.Expand(System.Web.OData.Query.QueryOptionSetting.Allowed);
             config.Filter(System.Web.OData.Query.QueryOptionSetting.Allowed);
+            config.Count(System.Web.OData.Query.QueryOptionSetting.Allowed);
+            
 
             config.MapODataServiceRoute("ODataRoute", "odata",
                 builder =>
