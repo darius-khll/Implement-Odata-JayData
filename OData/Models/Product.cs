@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Web.OData.Builder;
 using System.Web.OData.Query;
 
 namespace OData.Models
@@ -17,7 +18,7 @@ namespace OData.Models
         public virtual Supplier Supplier { get; set; }
         public int SupplierId { get; set; }
 
-
+        [AutoExpand]
         [ForeignKey(nameof(CategoryId))]
         public virtual Category Category { get; set; }
         public int CategoryId { get; set; }

@@ -1,4 +1,5 @@
 ﻿using OData.Models;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.OData;
 
@@ -8,13 +9,24 @@ namespace OData.Controllers
     {
         ProductsContext db = new ProductsContext();
 
-        [EnableQuery(AllowedQueryOptions = System.Web.OData.Query.AllowedQueryOptions.Filter | System.Web.OData.Query.AllowedQueryOptions.OrderBy,
-            AllowedOrderByProperties = "Name",
-            PageSize = 2
-            )]
+        //[EnableQuery(AllowedQueryOptions = System.Web.OData.Query.AllowedQueryOptions.Filter | System.Web.OData.Query.AllowedQueryOptions.OrderBy,
+        //    AllowedOrderByProperties = "Name",
+        //    PageSize = 2
+        //    )]
+        [EnableQuery]
         public IQueryable<Category> Get()
         {
-            return db.Categories;
+            //return db.Categories;
+            return new List<Category>
+            {
+                new Category {
+                    Id = 1, Name = "nnn",
+                    Products = new List<Product>{
+                        new Product { Id = 1 },
+                        new Product { Id = 2 }
+                    }
+                }
+            }.AsQueryable();
         }
 
         [EnableQuery]

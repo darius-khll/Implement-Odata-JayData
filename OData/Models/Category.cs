@@ -7,7 +7,7 @@ namespace OData.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        [NotExpandable]
+        //[NotExpandable]
         public virtual ICollection<Product> Products { get; set; }
     }
 }
