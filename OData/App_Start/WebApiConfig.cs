@@ -1,4 +1,6 @@
 ﻿using Microsoft.OData;
+using Microsoft.OData.UriParser;
+using OData.Implementions;
 using OData.Models;
 using System.Collections.Generic;
 using System.Web.Http;
@@ -37,6 +39,7 @@ namespace OData
                 {
                     builder.AddService(ServiceLifetime.Singleton, sp => edmModel);
                     builder.AddService<IEnumerable<IODataRoutingConvention>>(ServiceLifetime.Singleton, sp => ODataRoutingConventions.CreateDefault());
+                    builder.AddService<ODataUriResolver>(ServiceLifetime.Singleton, sp => new CaseInsensitiveResolver()); // enable case sensitive
                 });
         }
     }

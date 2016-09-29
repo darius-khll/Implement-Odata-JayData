@@ -5,6 +5,7 @@ using System.Web.OData.Query;
 
 namespace OData.Models
 {
+    [Select("Price", "Name", SelectType = SelectExpandType.Disabled)]
     public class Product
     {
         public int Id { get; set; }
@@ -18,7 +19,7 @@ namespace OData.Models
         public virtual Supplier Supplier { get; set; }
         public int SupplierId { get; set; }
 
-        [AutoExpand]
+        //[AutoExpand]
         [ForeignKey(nameof(CategoryId))]
         public virtual Category Category { get; set; }
         public int CategoryId { get; set; }
