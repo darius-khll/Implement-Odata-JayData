@@ -1,4 +1,5 @@
-﻿using OData.Models;
+﻿using OData.Implementions;
+using OData.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace OData.Controllers
     {
         ProductsContext db = new ProductsContext();
         //[EnableQuery(AllowedOrderByProperties = "Id,Name")]
+        //[MyEnableQueryAttribute]
         [EnableQuery]
         public IQueryable<Product> Get()
         {
