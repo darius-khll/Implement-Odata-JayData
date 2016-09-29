@@ -29,14 +29,15 @@ namespace OData
             config.Expand(System.Web.OData.Query.QueryOptionSetting.Allowed);
             config.Filter(System.Web.OData.Query.QueryOptionSetting.Allowed);
             config.Count(System.Web.OData.Query.QueryOptionSetting.Allowed);
-            
 
-            config.MapODataServiceRoute("ODataRoute", "odata",
-                builder =>
-                {
-                    builder.AddService(ServiceLifetime.Singleton, sp => edmModel);
-                    builder.AddService<IEnumerable<IODataRoutingConvention>>(ServiceLifetime.Singleton, sp => ODataRoutingConventions.CreateDefault());
-                });
+            config.MapODataServiceRoute("ODataRoute", "odata", edmModel);
+
+            //config.MapODataServiceRoute("ODataRoute", "odata",
+            //    builder =>
+            //    {
+            //        builder.AddService(ServiceLifetime.Singleton, sp => edmModel);
+            //        builder.AddService<IEnumerable<IODataRoutingConvention>>(ServiceLifetime.Singleton, sp => ODataRoutingConventions.CreateDefault());
+            //    });
         }
     }
 }

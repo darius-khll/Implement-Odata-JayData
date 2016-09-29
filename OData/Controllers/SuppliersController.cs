@@ -11,6 +11,7 @@ namespace OData.Controllers
         [EnableQuery]
         public IQueryable<Supplier> Get()
         {
+            return Enumerable.Empty<Supplier>().AsQueryable();
             return db.Suppliers;
         }
 
