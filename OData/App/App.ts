@@ -1,4 +1,6 @@
 ﻿
+//import * as x from '../jaydatacontext';
+
 var app = angular.module('app', []);
 
 class Ctrl1 {
@@ -11,7 +13,10 @@ class Ctrl1 {
 
     f1(): void {
 
+        //let a = x.factory({}).Products.toArray();
+
         
+
         //var todoDB = new 'Default' ("http://mysite.com/my.svc");
 
     }
