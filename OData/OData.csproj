@@ -115,6 +115,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\app1.js" />
+    <Content Include="context.js" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="Scripts\angular-mocks.js" />
@@ -219,6 +221,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="App\App.ts" />
     <TypeScriptCompile Include="Scripts\Typings\angular.d.ts" />
+    <TypeScriptCompile Include="Scripts\Typings\es6-promise\es6-promise.d.ts" />
     <TypeScriptCompile Include="Scripts\Typings\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>
