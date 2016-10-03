@@ -1,7 +1,6 @@
-﻿
-//import * as x from '../jaydatacontext';
+﻿import * as x from '../jaydatacontext';
 
-var app = angular.module('app', []);
+var app = angular.module('app1', []);
 
 class Ctrl1 {
 
@@ -11,13 +10,17 @@ class Ctrl1 {
         this.Name = "Ali";
     }
 
-    f1(): void {
-
-        //let a = x.factory({}).Products.toArray();
-
+    async f1(): Promise<void> {
         
+        let context = new x.Default.Container({
+            name: "oData",
+            oDataServiceHost: "http://localhost:4516/odata",
+            withCredentials: false,
+            maxDataServiceVersion: "4.0"
+        });
 
-        //var todoDB = new 'Default' ("http://mysite.com/my.svc");
+        let items = await context.Products.filter((c) => c.Id == 1).toArray();
+        debugger;
 
     }
 

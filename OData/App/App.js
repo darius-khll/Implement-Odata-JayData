@@ -1,14 +1,29 @@
-//import * as x from '../jaydatacontext';
-var app = angular.module('app', []);
-var Ctrl1 = (function () {
-    function Ctrl1() {
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator.throw(value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments)).next());
+    });
+};
+import * as x from '../jaydatacontext';
+var app = angular.module('app1', []);
+class Ctrl1 {
+    constructor() {
         this.Name = "Ali";
     }
-    Ctrl1.prototype.f1 = function () {
-        //let a = x.factory({}).Products.toArray();
-        //var todoDB = new 'Default' ("http://mysite.com/my.svc");
-    };
-    return Ctrl1;
-}());
+    f1() {
+        return __awaiter(this, void 0, void 0, function* () {
+            let context = new x.Default.Container({
+                name: "oData",
+                oDataServiceHost: "http://localhost:4516/odata",
+                withCredentials: false,
+                maxDataServiceVersion: "4.0"
+            });
+            let items = yield context.Products.filter((c) => c.Id == 1).toArray();
+            debugger;
+        });
+    }
+}
 app.controller('Ctrl1', Ctrl1);
 //# sourceMappingURL=App.js.map
