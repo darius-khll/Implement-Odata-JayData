@@ -220,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="App\App.ts" />
+    <TypeScriptCompile Include="JayDataContext.d.ts" />
     <TypeScriptCompile Include="Scripts\Typings\angular.d.ts" />
     <TypeScriptCompile Include="Scripts\Typings\es6-promise\es6-promise.d.ts" />
     <TypeScriptCompile Include="Scripts\Typings\jquery.d.ts" />
