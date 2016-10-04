@@ -1,29 +1,19 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator.throw(value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments)).next());
-    });
-};
-import * as x from '../jaydatacontext';
-var app = angular.module('app1', []);
-class Ctrl1 {
-    constructor() {
+//import * as x from '../jaydatacontext';
+var app = angular.module('myApp', []);
+var Ctrl1 = (function () {
+    function Ctrl1() {
         this.Name = "Ali";
     }
-    f1() {
-        return __awaiter(this, void 0, void 0, function* () {
-            let context = new x.Default.Container({
-                name: "oData",
-                oDataServiceHost: "http://localhost:4516/odata",
-                withCredentials: false,
-                maxDataServiceVersion: "4.0"
-            });
-            let items = yield context.Products.filter((c) => c.Id == 1).toArray();
-            debugger;
-        });
-    }
-}
-app.controller('Ctrl1', Ctrl1);
+    Ctrl1.prototype.f1 = function () {
+        //let context = new x.Default.Container({
+        //    name: "oData",
+        //    oDataServiceHost: "http://localhost:4516/odata",
+        //    withCredentials: false,
+        //    maxDataServiceVersion: "4.0"
+        //});
+        //let items = await context.Products.filter((c) => c.Id == 1).toArray();
+    };
+    return Ctrl1;
+}());
+app.controller('myCtrl', Ctrl1);
 //# sourceMappingURL=App.js.map
