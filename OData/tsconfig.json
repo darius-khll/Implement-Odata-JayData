@@ -4,13 +4,13 @@
     "noEmitOnError": true,
     "removeComments": false,
     "sourceMap": true,
-    "target": "es5",
-    "module": "amd"
+    "target": "es6",
+    "module": "system"
   },
   "compileOnSave": true,
   "exclude": [
     "node_modules",
-    "wwwroot"
-    //"Scripts/Typings/es6-promise"
+    "wwwroot",
+    "Scripts/Typings/es6-promise"
   ]
 }
