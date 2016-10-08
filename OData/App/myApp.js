@@ -22,6 +22,9 @@ class CtrlMyApp {
                 maxDataServiceVersion: "4.0"
             });
             let items = yield context.Products.filter((c) => c.Id == 1).toArray();
+            //let item = context.Products.add({ Id: 1, Name: 'aaa' } as Models.Product);
+            //item.entityState = $data.EntityState.Added;
+            //await context.saveChanges();
         });
     }
 }

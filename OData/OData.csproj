@@ -318,6 +318,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="App\AppType.ts" />
     <TypeScriptCompile Include="App\JayDataContext\JayDataContext.d.ts" />
+    <TypeScriptCompile Include="App\JayDataContext\MyJaydataDeclaration\declarations.d.ts" />
     <TypeScriptCompile Include="App\JayDataContext\MyJaydataDeclaration\jaydata.d.ts" />
     <TypeScriptCompile Include="App\JayDataContext\MyJaydataDeclaration\modelContext.d.ts" />
     <TypeScriptCompile Include="App\myApp.ts" />
