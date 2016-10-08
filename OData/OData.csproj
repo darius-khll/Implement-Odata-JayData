@@ -115,12 +115,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App\app1.js" />
-    <Content Include="App\main.js" />
+    <Content Include="App\appScript.js" />
+    <Content Include="App\mainRequire.js" />
     <Content Include="App\JayDataContext\context.js" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="indexSystem.html" />
+    <Content Include="myIndex.html" />
     <Content Include="node_modules\systemjs\dist\system-csp-production.js" />
     <Content Include="node_modules\systemjs\dist\system-csp-production.src.js" />
     <Content Include="node_modules\systemjs\dist\system-polyfills.js" />
@@ -314,8 +315,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="App\App.ts" />
+    <TypeScriptCompile Include="App\AppType.ts" />
     <TypeScriptCompile Include="App\JayDataContext\JayDataContext.d.ts" />
+    <TypeScriptCompile Include="App\myApp.ts" />
     <TypeScriptCompile Include="App\mainSystem.ts" />
     <TypeScriptCompile Include="node_modules\typescript\Gulpfile.ts" />
     <TypeScriptCompile Include="node_modules\typescript\lib\lib.d.ts" />
