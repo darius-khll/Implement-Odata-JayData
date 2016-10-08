@@ -1,7 +1,8 @@
 ﻿
-var app = angular.module('myApp', []);
+var appScript = angular.module('appScript', []);
 
-app.controller('myCtrl', function () {
+appScript.controller('myCtrl', function () {
+
     var vm = this;
 
     vm.f1 = function () {

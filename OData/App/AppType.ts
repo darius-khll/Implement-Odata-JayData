@@ -1,6 +1,6 @@
 ﻿//import * as x from '../App/JayDataContext/jaydatacontext';
 
-var app = angular.module('myApp');
+var appType = angular.module('appType', []);
 
 class Ctrl1 {
     public Name: string;
@@ -21,4 +21,4 @@ class Ctrl1 {
     }
 }
 
-app.controller('myCtrl', Ctrl1);
+appType.controller('myCtrl', Ctrl1);
