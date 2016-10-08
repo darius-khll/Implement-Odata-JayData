@@ -1,10 +1,17 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
+﻿
+<div ng-app="myApp" ng-controller="myCtrl as vm" ng-init="vm.f1()">
 
-</body>
-</html>
+    <h1>Test</h1>
+    <h1>{{vm.Name}}</h1>
+
+</div>
+
+<script src="Scripts/angular.js"></script>
+<script type="text/javascript" src="http://include.jaydata.org/datajs-1.0.3.min.js"></script>
+<script src="Scripts/jaydata.js"></script>
+<script src="Scripts/jaydata-compatibility.js"></script>
+<script src="Scripts/jaydataproviders/oDataProvider.js"></script>
+<script src="App/JayDataContext/myJaydataContext.js"></script>
+
+<script src="App/myApp.js"></script>
+

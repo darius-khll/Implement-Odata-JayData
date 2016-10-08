@@ -116,6 +116,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\appScript.js" />
+    <Content Include="App\JayDataContext\myJaydataContext.js" />
     <Content Include="App\mainRequire.js" />
     <Content Include="App\JayDataContext\context.js" />
     <Content Include="Global.asax" />
@@ -317,6 +318,8 @@
   <ItemGroup>
     <TypeScriptCompile Include="App\AppType.ts" />
     <TypeScriptCompile Include="App\JayDataContext\JayDataContext.d.ts" />
+    <TypeScriptCompile Include="App\JayDataContext\MyJaydataDeclaration\jaydata.d.ts" />
+    <TypeScriptCompile Include="App\JayDataContext\MyJaydataDeclaration\modelContext.d.ts" />
     <TypeScriptCompile Include="App\myApp.ts" />
     <TypeScriptCompile Include="App\mainSystem.ts" />
     <TypeScriptCompile Include="node_modules\typescript\Gulpfile.ts" />
