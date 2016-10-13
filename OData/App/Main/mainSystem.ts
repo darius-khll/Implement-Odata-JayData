@@ -1,2 +1,2 @@
 ﻿
-import * as x from '../App/JayDataContext/jaydatacontext';
+import * as x from '../JayDataContext/jaydatacontext';
